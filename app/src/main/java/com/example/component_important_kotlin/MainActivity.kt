@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.TextView
 import android.widget.Toast
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.zip.Inflater
 
@@ -28,6 +29,10 @@ class MainActivity : AppCompatActivity() {
             textview.text = "Toast Customizada"
 
             toast.show()
+        }
+
+        buttonSnackMe.setOnClickListener {
+            Snackbar.make(contrantLayout,"SnackBar ",Snackbar.LENGTH_LONG).show()
         }
     }
 }
