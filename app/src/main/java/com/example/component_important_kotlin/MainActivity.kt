@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.ContextMenu
 import android.view.LayoutInflater
+import android.view.View
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.TextView
 import android.widget.Toast
@@ -13,7 +15,7 @@ import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.zip.Inflater
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,6 +51,18 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        //Setando o valor em um spinner
+        setSpinner.setOnClickListener {
+            spinnerDinamic.setSelection(2)
+        }
+
+        //Pegando o valor de um spinner
+        getSpinner.setOnClickListener {
+            val value = spinnerDinamic.selectedItem.toString()
+            Toast.makeText(this,value,Toast.LENGTH_LONG).show()
+        }
+
+
         loadSpiner()
     }
 
@@ -56,5 +70,14 @@ class MainActivity : AppCompatActivity() {
        val list =  Mock.getList()
         val adapter = ArrayAdapter(this,R.layout.support_simple_spinner_dropdown_item,list)
         spinnerDinamic.adapter = adapter
+    }
+
+    override fun onNothingSelected(p0: AdapterView<*>?) {
+
+    }
+    //Foi feito para pegar o valor do spiner, foi convertido em string
+    override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+        val value : String = parent?.getItemAtPosition(position).toString()
+        Toast.makeText(this,value,Toast.LENGTH_LONG).show()
     }
 }
