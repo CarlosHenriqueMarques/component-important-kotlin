@@ -29,4 +29,23 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonToastMe" />
 
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/spinnerStatic"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:entries="@array/weigth_array"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSnackMe" />
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/spinnerDinamic"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerStatic" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

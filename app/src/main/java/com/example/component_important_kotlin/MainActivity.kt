@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.ContextMenu
 import android.view.LayoutInflater
+import android.widget.ArrayAdapter
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
@@ -47,5 +48,13 @@ class MainActivity : AppCompatActivity() {
             snack.show()
 
         }
+
+        loadSpiner()
+    }
+
+    private fun loadSpiner() {
+       val list =  Mock.getList()
+        val adapter = ArrayAdapter(this,R.layout.support_simple_spinner_dropdown_item,list)
+        spinnerDinamic.adapter = adapter
     }
 }

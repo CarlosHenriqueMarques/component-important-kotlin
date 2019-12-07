@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">component-important-kotlin</string>
+    <string-array name="weigth_array">
+        <item>Gramas</item>
+        <item>Kg</item>
+        <item>Toneladas</item>
+    </string-array>
+
 </resources>
