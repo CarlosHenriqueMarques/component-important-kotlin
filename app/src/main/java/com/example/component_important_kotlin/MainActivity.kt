@@ -1,5 +1,6 @@
 package com.example.component_important_kotlin
 
+import android.app.ProgressDialog
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -13,6 +14,7 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.toast_custom.*
 import java.util.zip.Inflater
 
 class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
@@ -62,6 +64,19 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
             Toast.makeText(this,value,Toast.LENGTH_LONG).show()
         }
 
+        progressDialog.setOnClickListener {
+            val progress =  ProgressDialog(this)
+            progress.setTitle("Titulo")
+            progress.setMessage("Mensagem")
+            progress.show()
+
+
+
+            //Para fechar o progress por código
+            //progress.hide()
+            //progress.dismiss()
+
+        }
 
         loadSpiner()
     }

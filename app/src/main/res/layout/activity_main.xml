@@ -49,6 +49,7 @@
         app:layout_constraintTop_toBottomOf="@+id/spinnerStatic" />
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -74,6 +75,17 @@
             app:layout_constraintRight_toRightOf="parent"
             android:layout_weight="1"/>
     </LinearLayout>
+
+    <Button
+        android:id="@+id/progressDialog"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Progress Dialog"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"/>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
