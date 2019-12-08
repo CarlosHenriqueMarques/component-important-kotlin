@@ -1,18 +1,16 @@
-package com.example.component_important_kotlin
+package com.example.component_important_kotlin.Views
 
 import android.app.ProgressDialog
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.ContextMenu
-import android.view.LayoutInflater
 import android.view.View
 import android.widget.*
 import androidx.core.content.ContextCompat
+import com.example.component_important_kotlin.Mock.Mock
+import com.example.component_important_kotlin.R
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.toast_custom.*
-import java.util.zip.Inflater
 
 class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener, SeekBar.OnSeekBarChangeListener {
 
@@ -39,7 +37,9 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener, Se
           val snack =  Snackbar.make(contrantLayout,"SnackBar ",Snackbar.LENGTH_LONG)
             snack.view.findViewById<TextView>(R.id.snackbar_text).setTextColor(Color.GREEN)
             snack.view.setBackgroundColor(Color.RED)
-            ContextCompat.getColor(this,R.color.colorAccent)
+            ContextCompat.getColor(this,
+                R.color.colorAccent
+            )
 
             snack.setAction("Desfazer"){
                 Snackbar.make(contrantLayout, "Ação Desfeita", Snackbar.LENGTH_SHORT).show()
@@ -86,7 +86,8 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener, Se
 
     private fun loadSpiner() {
        val list =  Mock.getList()
-        val adapter = ArrayAdapter(this,R.layout.support_simple_spinner_dropdown_item,list)
+        val adapter = ArrayAdapter(this,
+            R.layout.support_simple_spinner_dropdown_item,list)
         spinnerDinamic.adapter = adapter
     }
 

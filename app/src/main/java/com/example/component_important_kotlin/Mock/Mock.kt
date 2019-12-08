@@ -1,4 +1,4 @@
-package com.example.component_important_kotlin
+package com.example.component_important_kotlin.Mock
 
 class Mock private constructor(){
     companion object{

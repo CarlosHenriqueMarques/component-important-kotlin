@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:id="@+id/contrantLayout"
     android:layout_margin="5dp"
-    tools:context=".MainActivity">
+    tools:context=".Views.MainActivity">
 
     <Button
         android:id="@+id/buttonToastMe"
