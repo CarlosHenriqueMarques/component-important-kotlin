@@ -7,17 +7,14 @@ import android.os.Bundle
 import android.view.ContextMenu
 import android.view.LayoutInflater
 import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.core.content.ContextCompat
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.toast_custom.*
 import java.util.zip.Inflater
 
-class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
+class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener, SeekBar.OnSeekBarChangeListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -70,12 +67,18 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
             progress.setMessage("Mensagem")
             progress.show()
 
-
-
             //Para fechar o progress por código
             //progress.hide()
             //progress.dismiss()
 
+        }
+
+        getSeek.setOnClickListener {
+            val value = seekBar.progress.toString()
+            Toast.makeText(this,value,Toast.LENGTH_LONG).show()
+        }
+        setSeek.setOnClickListener {
+            seekBar.progress = 10
         }
 
         loadSpiner()
@@ -94,5 +97,21 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
         val value : String = parent?.getItemAtPosition(position).toString()
         Toast.makeText(this,value,Toast.LENGTH_LONG).show()
+    }
+
+    override fun onProgressChanged(p0: SeekBar?, progress: Int, p2: Boolean) {
+        val id = seekBar.id
+        if(id == R.id.seekBar){
+            textbarSeekBar.text = progress.toString()
+        }
+
+    }
+
+    override fun onStartTrackingTouch(p0: SeekBar?) {
+
+    }
+
+    override fun onStopTrackingTouch(p0: SeekBar?) {
+
     }
 }
